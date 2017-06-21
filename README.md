@@ -1,4 +1,7 @@
-# frontendkickstarter
+# 🔥 ideas & ❄️ drinks
+
+slides: 
+http://slides.com/maciejkorsan/web-browsers-laboratory#/
 
 requirements:
 - node.js (npm)
