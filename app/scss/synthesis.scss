@@ -1,0 +1,36 @@
+.synthesis {
+    max-width: 640px;
+    background: #fff;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 3px;
+    color: #333;
+}
+
+.speech-msg,
+.voice {
+    padding: 10px;
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 20px;
+    background: none;
+    border: 1px solid #333;
+}
+
+.speak {
+    background: none;
+    border: 2px solid $pink;
+    color: $pink;
+    font-size: 18px;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    position: static;
+    width: 100%;
+    z-index: 10;
+    &:hover {
+        background: $pink;
+        color: #fff;
+    }
+}

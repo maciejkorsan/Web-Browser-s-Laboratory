@@ -1,0 +1,50 @@
+<a class="navigation__container navigation__container--next" href="bluetooth.html">
+    <span class="navigation__title">bluetooth</span>
+    <span class="navigation__arrow">&rarr;</span>
+</a>
+
+<a class="navigation__container navigation__container--prev" href="index.html">
+    <span class="navigation__arrow">&larr;</span>
+    <span class="navigation__title">animations</span>
+</a>
+
+<section class="battery">
+	<span class="battery__level"></span>
+	<div class="battery__background"></div>
+</section>
+
+
+</section>
+
+<script type="text/javascript"> 
+
+  navigator.getBattery().then((battery) => {
+
+
+  	function updateValues() {
+  		const percentage = parseInt(battery.level*100) + '%';
+	    document.querySelector('.battery__background').style.height = percentage;
+	    document.querySelector('.battery__level').innerHTML = percentage; 
+  	}
+
+  	function updateMethod() {
+  		if (battery.charging) {
+       	document.querySelector('.battery').classList.remove('battery--on'); 
+    	} else {
+      	document.querySelector('.battery').classList.add('battery--on'); 
+    	}
+  	}
+
+    updateValues();
+    updateMethod();
+
+    battery.onchargingchange = (event) => {   
+    	updateMethod();
+      updateValues();
+    };
+
+    battery.onlevelchange = (event) => { 
+       updateValues();
+    };
+});
+</script>

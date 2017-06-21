@@ -1,0 +1,350 @@
+.animations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  min-height: 100vh;
+  overflow: hidden; }
+  .animations__control {
+    position: fixed;
+    top: 10px;
+    width: 100%;
+    text-align: center; }
+  .animations__button {
+    padding: 10px;
+    border: none;
+    background: none;
+    border-radius: 3px;
+    color: #E61B72;
+    margin: 0 5px;
+    display: inline-block;
+    font-size: 20px;
+    transition: all 0.3s ease-in; }
+    .animations__button:hover {
+      background: #fff;
+      border-color: #fff;
+      cursor: pointer; }
+  @media (max-width: 768px) {
+    .animations {
+      display: block; } }
+
+.animation {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center; }
+  .animation__text {
+    font-size: 48px; }
+    .animation--css .animation__text {
+      will-change: transform color;
+      -webkit-animation: awesome 2s linear infinite;
+              animation: awesome 2s linear infinite; }
+  @media (max-width: 768px) {
+    .animation {
+      width: 100%; } }
+
+@-webkit-keyframes awesome {
+  0% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+    color: #fff; }
+  25% {
+    -webkit-transform: scale(1.3) rotate(90deg);
+            transform: scale(1.3) rotate(90deg);
+    color: yellow; }
+  50% {
+    -webkit-transform: scale(1) rotate(180deg);
+            transform: scale(1) rotate(180deg);
+    color: hotpink; }
+  75% {
+    -webkit-transform: scale(1.3) rotate(270deg);
+            transform: scale(1.3) rotate(270deg);
+    color: red; }
+  100% {
+    -webkit-transform: scale(1) rotate(360deg);
+            transform: scale(1) rotate(360deg);
+    color: #fff; } }
+
+@keyframes awesome {
+  0% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+    color: #fff; }
+  25% {
+    -webkit-transform: scale(1.3) rotate(90deg);
+            transform: scale(1.3) rotate(90deg);
+    color: yellow; }
+  50% {
+    -webkit-transform: scale(1) rotate(180deg);
+            transform: scale(1) rotate(180deg);
+    color: hotpink; }
+  75% {
+    -webkit-transform: scale(1.3) rotate(270deg);
+            transform: scale(1.3) rotate(270deg);
+    color: red; }
+  100% {
+    -webkit-transform: scale(1) rotate(360deg);
+            transform: scale(1) rotate(360deg);
+    color: #fff; } }
+
+.words {
+  font-size: 20px;
+  color: #333;
+  max-width: 500px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem 1rem 5rem;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
+  background-size: 100% 3rem;
+  position: relative;
+  line-height: 3rem; }
+
+p {
+  margin: 0 0 0rem; }
+
+.words:before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  top: 0;
+  left: 30px;
+  bottom: 0;
+  border: 1px solid;
+  border-color: transparent #efe4e4; }
+
+.synthesis {
+  max-width: 640px;
+  background: #fff;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 3px;
+  color: #333; }
+
+.speech-msg,
+.voice {
+  padding: 10px;
+  width: 100%;
+  font-size: 24px;
+  margin-bottom: 20px;
+  background: none;
+  border: 1px solid #333; }
+
+.speak {
+  background: none;
+  border: 2px solid #E61B72;
+  color: #E61B72;
+  font-size: 18px;
+  border-radius: 3px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  position: static;
+  width: 100%;
+  z-index: 10; }
+  .speak:hover {
+    background: #E61B72;
+    color: #fff; }
+
+.bluetooth {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px; }
+  .bluetooth__button {
+    background: none;
+    border: 2px solid #E61B72;
+    color: #E61B72;
+    font-size: 18px;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    position: static;
+    z-index: 10; }
+    .bluetooth__button:hover {
+      background: #E61B72;
+      color: #fff; }
+  .bluetooth__info {
+    font-family: Monaco, monospace;
+    display: block;
+    font-size: 49vw;
+    line-height: 1;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    overflow: hidden; }
+  .bluetooth__level {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    will-change: height;
+    transition: height 0.7s ease-in-out;
+    background: rgba(26, 137, 34, 0.5); }
+
+.battery {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  position: relative; }
+  .battery__level {
+    font-family: Monaco, monospace;
+    display: block;
+    font-size: 49vw;
+    line-height: 1;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4); }
+  .battery__background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: rgba(26, 137, 34, 0.5); }
+    .battery--on .battery__background {
+      background: rgba(234, 53, 86, 0.5); }
+
+.battery-card {
+  display: block;
+  width: 300px;
+  overflow: hidden;
+  border: 1px solid #D5D5D5;
+  border-radius: 6px;
+  font-weight: 100;
+  margin: 0 auto; }
+
+.battery-title {
+  color: #fff;
+  font-size: .9em;
+  line-height: 50px;
+  padding: 0 15px;
+  font-weight: 100;
+  margin: 0; }
+
+.battery-percentage {
+  font-size: 2.5em;
+  line-height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px; }
+
+.battery-box {
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 1px solid #D5D5D5; }
+
+.battery-info {
+  font-size: 12px;
+  margin: 0 auto;
+  padding: 15px 45px;
+  overflow: hidden; }
+
+.battery-info dd {
+  float: right;
+  margin-top: -22px;
+  text-align: left;
+  width: 35%; }
+
+body {
+  background: #1a213e;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Maven Pro'; }
+
+* {
+  box-sizing: border-box; }
+
+*:focus {
+  outline-width: 1px;
+  outline-color: #fff; }
+
+.navigation__container {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  white-space: nowrap;
+  font-size: 18px;
+  padding: 6px 10px;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  height: 40px;
+  margin-top: -20px;
+  transition: all 0.3s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  will-change: box-shadow; }
+  .navigation__container--next {
+    right: 15px; }
+  .navigation__container--prev {
+    left: 15px; }
+  .navigation__container:hover {
+    box-shadow: 0px 0px 5px 9999px rgba(0, 0, 0, 0.75); }
+
+.navigation__title {
+  display: none;
+  margin: 0 5px; }
+  .navigation__container:hover .navigation__title {
+    display: inline; }
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: #fefefe; }
+  footer a {
+    color: #E61B72;
+    text-decoration: none;
+    font-weight: 500; }
+    footer a span {
+      font-weight: 700;
+      color: #fff; }

@@ -1,0 +1,66 @@
+
+<a class="navigation__container navigation__container--prev" href="battery.html">
+    <span class="navigation__arrow">&larr;</span>
+    <span class="navigation__title">battery</span>
+</a>
+
+<a class="navigation__container navigation__container--next" href="synthesis.html">
+    <span class="navigation__title">speech synthesis</span>
+    <span class="navigation__arrow">&rarr;</span>
+</a>
+
+
+<div class="bluetooth">
+  <button class="bluetooth__button">Connect & get the info</button>
+  <span class="bluetooth__info"><span class="bluetooth__info--js"></span></span>
+  <div class="bluetooth__level"></div>
+</div>
+
+
+
+<script type="text/javascript">
+function readBatteryLevel() {
+  var $target = document.querySelector('.bluetooth__info--js');
+  var $level = document.querySelector('.bluetooth__level'); 
+  var $button = document.querySelector('.bluetooth__button'); 
+  if (!('bluetooth' in navigator)) {
+    $target.innerText = 'Bluetooth API not supported.';
+    return;
+  } 
+
+  navigator.bluetooth.requestDevice({
+      filters: [
+      {
+      	name: ['Korsan']
+      }, {
+      	services: ['battery_service']
+      }]
+    })
+    .then(function (device) {
+      return device.gatt.connect();
+    })
+    .then(function (server) {
+      return server.getPrimaryService('battery_service');
+    })
+    .then(function (service) {
+      return service.getCharacteristic('battery_level');
+    })
+    .then(function (characteristic) {
+      return characteristic.readValue();
+    })
+    .then(function (value) { 
+      $target.innerHTML = value.getUint8(0) + '%';
+      $level.style.height = value.getUint8(0) + '%';
+      $button.style.opacity = 0;
+    })
+    .catch(function (error) {
+      $target.innerText = error;
+    });
+}
+
+document.querySelector('.bluetooth__button').addEventListener('click', function() {
+  readBatteryLevel();
+});
+
+
+</script>

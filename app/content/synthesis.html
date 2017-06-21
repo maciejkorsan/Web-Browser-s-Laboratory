@@ -1,0 +1,65 @@
+<a class="navigation__container navigation__container--prev" href="bluetooth.html">
+    <span class="navigation__arrow">&larr;</span>
+    <span class="navigation__title">bluetooth</span>
+</a>
+<a class="navigation__container navigation__container--next" href="recognition.html">
+    <span class="navigation__title">speech recognition</span>
+    <span class="navigation__arrow">&rarr;</span>
+</a>
+
+<div class="synthesis">
+    <input placeholder="text to read" type="text" name="speech-msg" class="speech-msg" x-webkit-speech>
+    <div class="option"> 
+        <select name="voice" class="voice"></select>
+    </div>
+    <button class="speak">Speak</button>
+</div>
+
+<script type="text/javascript">
+var button = document.querySelector('.speak');
+var speechMsgInput = document.querySelector('.speech-msg');
+var voiceSelect = document.querySelector('.voice');
+
+function loadVoices() {
+    var voices = speechSynthesis.getVoices();
+
+    voices.forEach(function(voice, i) {
+        var option = document.createElement('option');
+        option.value = voice.name;
+        option.innerHTML = voice.name;
+        voiceSelect.appendChild(option);
+    });
+}
+
+loadVoices();
+
+window.speechSynthesis.onvoiceschanged = function(e) {
+    loadVoices();
+};
+
+
+function speak(text) {
+    var msg = new SpeechSynthesisUtterance();
+
+    msg.text = text;
+
+    msg.volume = 1;
+    msg.rate = 1;
+    msg.pitch = 1;
+
+    if (voiceSelect.value) {
+        msg.voice = speechSynthesis.getVoices().filter(function(voice) {
+            return voice.name == voiceSelect.value;
+        })[0];
+    }
+    console.log(msg);
+    window.speechSynthesis.speak(msg);
+}
+
+button.addEventListener('click', function(e) {
+    if (speechMsgInput.value.length > 0) {
+        console.log(speechMsgInput.value);
+        speak(speechMsgInput.value);
+    }
+});
+</script>

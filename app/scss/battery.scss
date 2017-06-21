@@ -1,0 +1,77 @@
+.battery {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position:relative;
+  &__level {
+    font-family: Monaco, monospace;
+    display: block;
+    font-size: 49vw;
+    line-height: 1;
+    font-weight: 500; 
+    color: rgba(255,255,255,0.4);
+  }
+  &__background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: rgba(26,137,34,0.5);
+    .battery--on & {
+      background: rgba(234,53,86,0.5)
+    }
+  }
+}
+
+.battery-card {
+  display: block;
+  width: 300px;
+  overflow: hidden;
+  border: 1px solid #D5D5D5;
+  border-radius: 6px;
+  font-weight: 100;
+  margin: 0 auto;
+}
+
+.battery-title {
+  color: #fff;
+  font-size: .9em;
+  line-height: 50px;
+  padding: 0 15px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.battery-percentage {
+  font-size: 2.5em;
+  line-height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.battery-box {
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 1px solid #D5D5D5;
+}
+
+
+
+.battery-info {
+  font-size: 12px;
+  margin: 0 auto;
+  padding: 15px 45px;
+  overflow: hidden;
+}
+
+.battery-info dd {
+  float: right;
+  margin-top: -22px;
+  text-align: left;
+  width: 35%;
+}
